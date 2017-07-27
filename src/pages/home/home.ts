@@ -1,14 +1,28 @@
-import { Component } from '@angular/core';
+import { Usuario } from './../../app/shared/usuario';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
+
+import { UsuarioService } from "../../app/services/usuario.service";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
-  constructor(public navCtrl: NavController) {
+  usuarios: Usuario[];
+
+  constructor(public navCtrl: NavController, 
+    private usuarioService:UsuarioService  ) {
 
   }
+
+   ngOnInit() {
+   this.getUsuarios();
+}
+getUsuarios(): void {
+      this.usuarioService.getUsuarios()
+      .then(usuarios => this.usuarios = usuarios);
+}
 
 }

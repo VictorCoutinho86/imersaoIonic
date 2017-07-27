@@ -6,6 +6,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content class="card-background-page">
+<ion-card *ngIf="usuario" >
+    <img src="../../assets/img/victor.jpg"/>
+    <div class="card-title">{{usuario.nome}}</div>
+    <div class="card-subtitle">{{usuario.email}}</div>
+  </ion-card>
+  <ion-card (swipe)="swipeEvent($event)">
+</ion-card>
 </ion-content>
