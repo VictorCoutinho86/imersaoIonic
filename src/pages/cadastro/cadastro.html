@@ -10,18 +10,18 @@
       
       <ion-item >
         <ion-label floating>Nome</ion-label>
-        <ion-input type="text" name="usuario.nome"></ion-input>
+        <ion-input type="text" name="nome" #nome></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>E-mail</ion-label>
-        <ion-input type="email" name="usuario.email"></ion-input>
+        <ion-input type="email" name="email" #email></ion-input>
       </ion-item>
 
     </ion-list>
 
     <div padding>
-      <button ion-button color="primary" (click)="save(usuario)" 
+      <button ion-button color="primary" (click)="save(nome, email)" 
       block>Salvar</button>
     </div>
 </ion-content>

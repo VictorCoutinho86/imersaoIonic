@@ -13,11 +13,11 @@
     </ion-thumbnail>
     <h2>{{usuario.nome}}</h2>
     <p>{{usuario.email}}</p>
-    <button ion-button clear item-end>View</button>
+    <button ion-button clear item-end (click)="goToAbout()">View</button>
   </ion-item>
 </ion-list>
 <ion-fab top right>
-    <button ion-fab color="primary">
+    <button ion-fab color="primary" (click)="goToCadastro()">
       <ion-icon name="add"></ion-icon></button>
 </ion-fab>
 </ion-content>

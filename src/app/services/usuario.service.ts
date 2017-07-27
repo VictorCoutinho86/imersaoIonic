@@ -35,7 +35,7 @@ export class UsuarioService {
   }
 
   create(usuario:Usuario):Promise<string>{
-    return this.http.post(this.urlBase, JSON.stringify(usuario))
+    return this.http.post(this.urlBase, usuario)
     .toPromise()
     .then(Response=>Response.json)
     .catch(this.handleError);
