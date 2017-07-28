@@ -6,16 +6,17 @@
 
 <ion-content padding>
 <h3>Usuários Cadastrados</h3>
-<ion-list>
-  <ion-item *ngFor="let usuario of usuarios">
-    <ion-thumbnail item-start>
+
+<ion-card *ngFor="let usuario of usuarios">
+
+  <ion-item>
+    <ion-avatar item-start>
       <img src="../../assets/img/victor.jpg">
-    </ion-thumbnail>
+    </ion-avatar>
     <h2>{{usuario.nome}}</h2>
     <p>{{usuario.email}}</p>
-    <button ion-button clear item-end (click)="goToAbout()">View</button>
   </ion-item>
-</ion-list>
+  </ion-card>
 <ion-fab top right>
     <button ion-fab color="primary" (click)="goToCadastro()">
       <ion-icon name="add"></ion-icon></button>

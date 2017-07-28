@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 
+
 import { Usuario } from '../shared/usuario';
 
 @Injectable()
 export class UsuarioService {
   private urlBase:string = "http://localhost:8080/user";
-  //private headers = new Headers({'Content-Type': 'application/json'});
+  mensagem:string
+
 
   constructor(private http:Http) { }
 
@@ -35,10 +37,11 @@ export class UsuarioService {
   }
 
   create(usuario:Usuario):Promise<string>{
-    return this.http.post(this.urlBase, usuario)
-    .toPromise()
-    .then(Response=>Response.json)
-    .catch(this.handleError);
+
+    return this.http.post(this.urlBase, JSON.stringify(usuario))
+      .toPromise()
+      .then(() => this.mensagem)
+      .catch(this.handleError);
   }
 
   delete(id:number):Promise<string>{
