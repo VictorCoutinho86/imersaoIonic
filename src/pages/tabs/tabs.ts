@@ -1,3 +1,4 @@
+import { Update } from './../update/update';
 import { Component } from '@angular/core';
 
 import { AboutPage } from '../about/about';
@@ -14,6 +15,7 @@ export class TabsPage {
   tab2Root = AboutPage;
   tab3Root = ContactPage;
   tab4Root = Cadastro;
+  tab5Root = Update;
 
   constructor() {
 

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Cadastro de Usuário</ion-title>
+    <ion-title>Atualização</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
 
       <ion-item>
         <ion-label floating>Nome</ion-label>
-        <ion-input formControlName="nome" type="text"></ion-input>
+        <ion-input formControlName="nome" type="text"[(ngModel)]="usuario.nome"></ion-input>
       </ion-item>
 
       <ion-item *ngIf="!usuarioForm.controls.nome.valid  
@@ -21,14 +21,14 @@
 
       <ion-item>
         <ion-label floating>E-mail</ion-label>
-        <ion-input formControlName="email" type="email"></ion-input>
+        <ion-input formControlName="email" type="text" [(ngModel)]="usuario.email"></ion-input>
       </ion-item>
         <p *ngIf="!usuarioForm.controls.email.valid &&
          (usuarioForm.controls.email.dirty || submitAttempt)">Por favor, insira um E-mail válido.</p>
 
     </form>
 
-    <button ion-button full color="primary" (click)="save()">Cadastrar</button>
+    <button ion-button full color="primary" (click)="update()">Atualizar</button>
   </ion-list>
 
 </ion-content>

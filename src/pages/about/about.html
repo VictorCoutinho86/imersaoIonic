@@ -21,8 +21,8 @@
     <button ion-fab color="secondary"><ion-icon name="settings">
       </ion-icon></button>
     <ion-fab-list side="right">
-      <button ion-fab color="primary"><ion-icon name="build"></ion-icon></button>
-      <button ion-fab color="danger"><ion-icon name="trash"></ion-icon></button>
+      <button ion-fab color="primary" (click)="update(usuario)"><ion-icon name="build"></ion-icon></button>
+      <button ion-fab color="danger" (click)="delete(usuario)"><ion-icon name="trash"></ion-icon></button>
     </ion-fab-list>
 </ion-fab>
 </ion-content>

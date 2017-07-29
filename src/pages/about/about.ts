@@ -1,8 +1,9 @@
+import { HomePage } from './../home/home';
+import { Update } from './../update/update';
 import { Usuario } from './../../app/shared/usuario';
 import { UsuarioService } from './../../app/services/usuario.service';
 import { Component, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Location } from "@angular/common";
+import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-about',
@@ -16,17 +17,23 @@ export class AboutPage implements OnInit {
   constructor(
     public navCtrl: NavController, 
     private usuarioService:UsuarioService, 
-    private location:Location) {
+    public navParams:NavParams) {
 
+      this.usuario = this.navParams.get('usuario');
   }
 
   ngOnInit(){
     this.getUsuario();
   }
   getUsuario(){
-    this.usuarioService.getUsuario(1).then(usuario => this.usuario = usuario);
+    this.usuarioService.getUsuario(this.usuario.id).then(usuario => this.usuario = usuario);
   }
-   swipeEvent(e) {
-    this.location.back();
-}
+  delete(usuario:any){
+    this.usuarioService.delete(this.usuario.id);
+    this.navCtrl.setRoot(HomePage);
+  }
+  update(usuario:any):void{
+    this.navCtrl.push(Update, {usuario: usuario})
+  }
+
 }

@@ -1,3 +1,4 @@
+import { Update } from './../pages/update/update';
 import { Cadastro } from './../pages/cadastro/cadastro';
 import { TarefaService } from './services/tarefa.service';
 import { UsuarioService } from './services/usuario.service';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    Cadastro
+    Cadastro,
+    Update
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    Cadastro
+    Cadastro,
+    Update
   ],
   providers: [
     StatusBar,
